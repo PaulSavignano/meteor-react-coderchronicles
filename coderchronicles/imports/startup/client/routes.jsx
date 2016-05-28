@@ -3,14 +3,14 @@ import React from 'react';
 import { mount } from 'react-mounter';
 
 // Layouts and Pages
-import { App } from '../../ui/layouts/App'
+import AppContainer from '../../ui/containers/app_container'
 import { Homepage } from '../../ui/pages/Homepage'
 
 FlowRouter.route('/', {
   name: 'homepage',
   action() {
-    mount(App, {
-      content: <Homepage />
+    mount(AppContainer, {
+      content: (props) => <Homepage {...props} />
     })
   }
 })
